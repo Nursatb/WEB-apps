@@ -52,7 +52,7 @@ $right = is_numeric($x) && is_numeric($y) && is_numeric($r) &&
         </td>
       </tr>
       <?php
-      if ($right) {
+      
         $x = (double)$_REQUEST['xin'];
         $y = (double)$_REQUEST['yin'];
         $r = (double)$_REQUEST['rin'];
@@ -73,7 +73,7 @@ $right = is_numeric($x) && is_numeric($y) && is_numeric($r) &&
         $rt = number_format(1000 * (microtime(true)-$tm),5) . ' msec';
         $_SESSION['ts' . $len] = $ts;
         $_SESSION['rt' . $len] = $rt;
-      }
+      
       for($i = $len; $i > 0; $i--){
         $x = $_SESSION['x'.$i];
         $y = $_SESSION['y'.$i];

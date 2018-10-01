@@ -9,7 +9,7 @@
 
 				<h1><a href="https://vk.com/nursat.baigenzheev"> <font face="serif"> Nursat Baigenzheyev GROUP P3211 Var:28101</font><a></h1>
 	<table width="100%" style="float: left;">
-		<form method="get" action="actions.php" onsubmit="return Durakfunc()" target="results">
+		<form method="get" action="actions.php" onsubmit="return (Durakfunc(this))" target="results">
 
 		<tr >
 			<td class="forX" width="160px" height="0px" align="center">
@@ -23,7 +23,7 @@
 		</tr>
 		<tr>
 			<td class="forY" width="160px" height="0px">
-				<p>Значения для Y:
+				<p>Значения для Y:<br>
 					<select id="Yvalue" name="Yvalue">
 						<option value="-5">-5</option>
 						<option value="-4">-4</option>
@@ -40,13 +40,13 @@
 		</tr>
 		<tr>
 			<td class="forR" width="160px" height="0px">
-				<p>Значения для R:
+				<p>Значения для R: <br>(по умолчанию R=0)
 
-						<p class="R"><input type="radio" name="R" onclick="incBtn(this.value);" value="1.0">1.0</p>
-						<p class="R"><input type="radio" name="R" onclick="incBtn(this.value);" value="1.5">1.5</p>
-						<p class="R"><input type="radio" name="R" onclick="incBtn(this.value);" value="2.0">2.0</p>
-						<p class="R"><input type="radio" name="R" onclick="incBtn(this.value);" value="2.5">2.5</p>
-						<p class="R"><input type="radio" name="R" onclick="incBtn(this.value);" value="3.0">3.0</p>
+						<p class="R" id="R"><input type="radio" name="R" value="1.0">1.0</p>
+						<p class="R" id="R"><input type="radio" name="R" value="1.5">1.5</p>
+						<p class="R" id="R"><input type="radio" name="R" value="2.0">2.0</p>
+						<p class="R" id="R"><input type="radio" name="R" value="2.5">2.5</p>
+						<p class="R" id="R"><input type="radio" name="R" value="3.0">3.0</p>
 
 				</p>
 			</td>
@@ -54,9 +54,10 @@
 		<tr>
 			<td class="button" colspan="1" align="center">
 				
-					<button id='finally' name="finallbutton">
+<!-- 					<button id='finally' name="finallbutton">
 						Проверить
-					</button>
+					</button> -->
+					<input type="submit" name="Отправить">
 				
 			</td>
 		</tr>
