@@ -1,19 +1,14 @@
-body {
-    background-color: white;
-}
-
 table {
 	border-spacing: 100px 10px;
+	position: static;
 }
 
-td {
-
-	width: 200px;
-}
 
 td.forX {
 	background-color:rgb(95,151,252);
 	border-radius: 20px;  
+	text-align: justify;
+	align-items: center;
 }
 
 td.forY{
@@ -41,8 +36,7 @@ td.image{
 }
 td.button{
 	border-radius: 20px;
-	background-color: rgb(95,151,252);
-	
+	background-color: rgb(95,151,252);	
 }
 
 
@@ -52,25 +46,20 @@ td.button{
 input#Xvalue {
 	text-align: center;
 	position: relative;
-	right: 55px;
-	bottom: 37px;
+	al
+/*	right: 55px;
+	bottom: 37px;*/
+
 
 }
 
-select {
+select#Yvalue {
 	text-align: right;
-	position: relative;
+/*	position: relative;
 	bottom: 37px;
-	left: 120px;
+	left: 120px;*/
 
 }
-
-input[type="radio"]{
-
-	-webkit-appearance:radio
-	position:relative;
-	left: 120px;
-	}
 
 
 
@@ -79,6 +68,16 @@ p {
 	text-align: left;
 	
 }
+
+p.textX{
+	position: relative;
+}
+
+p.R {
+	text-align: center;
+}
+
+
 
 h1 {
 	background: rgb(95,151,252);
@@ -90,4 +89,29 @@ h1 {
 	color: black;
 
 }
+
+
+iframe {
+	border:groove 3px rgb(95,151,252);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
