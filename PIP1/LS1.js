@@ -9,14 +9,29 @@ function incBtn(b) {
   document.getElementById('rin').value = b;
 }
 
-function Durakfunc(f){
+function Durakfunc(f,name){
 f.Xvalue.value = f.Xvalue.value.replace(',','.');
 var xnow = f.Xvalue.value;
-	if(isNaN(parseFloat(xnow)) || isNaN(xnow) || !isFinite(xnow) || xnow < -3 || xnow > 3){
-	  	window.alert("Исправьте значения X");
-	    return false;
+var elements = document.getElementsByName(name);
+var massage= "Исправьте значения Rf";
+console.log(elements.length);
+
+if (isNaN(parseFloat(xnow)) || isNaN(xnow) || !isFinite(xnow) || xnow < -3 || xnow > 3){
+		window.alert("Исправьте значения X");
+		return false;
+	} else {
+		for (var i = 0; i < elements.length; i++) {
+      		if (elements[i].type == "radio" && elements[i].checked) {
+        	return true;
+      }
+  }
+
 	}
+window.alert("Исправьте R");
+return false;
 }
+
+
 
 // function params(f) {
 // 	var validate = false;
