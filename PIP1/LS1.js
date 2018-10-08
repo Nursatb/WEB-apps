@@ -13,21 +13,27 @@ function Durakfunc(f,name){
 f.Xvalue.value = f.Xvalue.value.replace(',','.');
 var xnow = f.Xvalue.value;
 var elements = document.getElementsByName(name);
-var massage= "Исправьте значения Rf";
+var massage= "Исправьте значения R";
 console.log(elements.length);
+var x = "Volvo" + 16 + 4;
+console.log(x);
 
 if (isNaN(parseFloat(xnow)) || isNaN(xnow) || !isFinite(xnow) || xnow < -3 || xnow > 3){
-		window.alert("Исправьте значения X");
-		return false;
-	} else {
-		for (var i = 0; i < elements.length; i++) {
-      		if (elements[i].type == "radio" && elements[i].checked) {
-        	return true;
-      }
-  }
+	document.getElementById('error').style.display = 'block';
+	return false;
+} else {
+	for (var i = 0; i < elements.length; i++) {
+	  		if (elements[i].type == "radio" && elements[i].checked) {
+	  			document.getElementById('error').style.display = 'none';
+				document.getElementById('error1').style.display = 'none';
+	    	return true;
+	  		}
+		}
 
-	}
-window.alert("Исправьте R");
+}
+document.getElementById('error').style.display = 'none';
+document.getElementById('error1').style.display = 'block';
+
 return false;
 }
 

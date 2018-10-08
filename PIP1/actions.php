@@ -1,15 +1,15 @@
 <?php
 	session_start();
-	date_default_timezone_set("UTC");
+	date_default_timezone_set("UTF");
 	date_default_timezone_set('Europe/Moscow');
 	$tm = microtime(true);
-	$ts = date('m/d/Y h:i:s a');
+	$ts = date('m/d/Y h:i:s A');
 	$X = $_REQUEST["Xvalue"];
 	$Y = $_REQUEST["Yvalue"];
 	$R = $_REQUEST["R"];
 	$tr = false;
-	$right = is_numeric($X) && is_numeric($Y) && is_numeric($R) && floatval($X) >=(-3) && floatval($X)<= 3 && in_array($Y, array("-5","-4","-3","-2","-1","0","1","2","3"))  &&
-	in_array($R, array("1", "1.5","2", "2.5", "3"));
+	$right = is_numeric($X) && is_numeric($Y) && is_numeric($R) && floatval($X) >=(-3) && floatval($X)<= 3;
+
 
 ?>
 <!DOCTYPE html>
@@ -61,7 +61,7 @@
 
 
       <?php
-       
+       if ($right) {
         $X = (double)$_REQUEST['Xvalue'];
         $Y = (double)$_REQUEST['Yvalue'];
         $R = (double)$_REQUEST['R'];
@@ -74,7 +74,7 @@
 			$tr = true;
 		} else if ($X >= 0 && $Y >= 0 && $X <= $R && $Y <= $R/2){
 			$tr=true;
-		} else if ($Y = -(2*$X + $R) && $X <= 0 && $Y <= 0) {
+		} else if ($Y >= -(2*$X + $R) && $X <= 0 && $Y <= 0) {
 			$tr = true;
 		}
         else $tr = false;
@@ -82,7 +82,7 @@
         $rt = number_format(1000 * (microtime(true)-$tm),5) . ' msec';
         $_SESSION['ts' . $len] = $ts;
         $_SESSION['rt' . $len] = $rt;
-    	
+    	}
       for($i = $len; $i > 0; $i--){
         $X = $_SESSION['X'.$i];
         $Y = $_SESSION['Y'.$i];
@@ -91,6 +91,7 @@
         $ts = $_SESSION['ts'.$i];
         $rt = $_SESSION['rt'.$i];
     	
+
       ?>
 
 

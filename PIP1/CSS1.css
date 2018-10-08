@@ -1,4 +1,15 @@
 
+p#error {
+	color: red;
+	text-align: center;
+}
+
+p#error1 {
+	color: red;
+	text-align: center;
+}
+
+
 table {
 	border-spacing: 100px 10px;
 	position: static;
